@@ -188,15 +188,6 @@ function find_icon_files(icon_description)
 	if not icon_description then
 		return
 	end
-	-- Ensure GNOME icon theme is available
-	local previous_icon_theme = freedesktop_utils.icon_theme
-	local have_gnome_icon_theme = false
-	if freedesktop_utils.icon_theme then
-		have_gnome_icon_theme = freedesktop_utils.icon_theme == 'gnome'
-	end
-	if not have_gnome_icon_theme then
-		freedesktop_utils.icon_theme = 'gnome'
-	end
 	-- Load icons
 	local icon_files = {}
 	for name, info in pairs(icon_description) do
